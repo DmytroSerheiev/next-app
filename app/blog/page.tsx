@@ -1,4 +1,3 @@
-"use client";
 import { getAllPosts } from "@/services/getPosts";
 import { Metadata } from "next";
 import { Posts } from "@/components/Posts";
