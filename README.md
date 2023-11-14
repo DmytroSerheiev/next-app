@@ -34,3 +34,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+швидке створення функції
+В открытом файле, где вы хотите создать компонент, введите
+"rfc".
+Нажмите клавишу
+"Tab".
+Exemple👇:
+import React from 'react';
+
+export default function Contacts() {
+return (
+
+<div>
+<h1>Contact page</h1>
+</div>
+);
+}
+Це швидкий спосіб створити функціональний компонент у React з використанням сніпета.
