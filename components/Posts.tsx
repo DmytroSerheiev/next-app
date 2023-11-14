@@ -1,21 +1,24 @@
 "use client";
-import { shallow } from "zustand/shallow";
-import { usePosts } from "@/store";
+import useSWR from "swr";
+// import { shallow } from "zustand/shallow";
+// import { usePosts } from "@/store";
 import Link from "next/link";
-import { useEffect } from "react";
+import { getAllPosts } from "@/services/getPosts";
+// import { useEffect } from "react";
 
 const Posts = () => {
-  const [posts, loading, getAllPosts] = usePosts(
-    (state) => [state.posts, state.loading, state.getAllPosts],
-    shallow
-  );
+  const { data: posts, isLoading } = useSWR("posts", getAllPosts);
+  // const [posts, loading, getAllPosts] = usePosts(
+  //   (state) => [state.posts, state.loading, state.getAllPosts],
+  //   shallow
+  // );
 
-  useEffect(() => {
-    getAllPosts();
-  }, [getAllPosts]);
+  // useEffect(() => {
+  //   getAllPosts();
+  // }, [getAllPosts]);
 
-  return loading ? (
-    <h3>Loading...</h3>
+  return isLoading ? (
+    <h3>Loading... </h3>
   ) : (
     <ul>
       {posts.map((post: any) => (
@@ -26,4 +29,5 @@ const Posts = () => {
     </ul>
   );
 };
+
 export { Posts };
