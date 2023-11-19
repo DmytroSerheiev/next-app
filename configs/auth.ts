@@ -31,7 +31,7 @@ export const authConfig: AuthOptions = {
       },
     }),
   ],
-  secret: process.env.SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/signin",
   },
